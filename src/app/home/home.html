@@ -1,0 +1,10 @@
+<h1>users list</h1>
+
+
+@for(user of users;track user.id)
+{
+    <li>
+        <a routerLink="users/{{user.id}}/{{user.name}}">{{user.name}}</a>
+        <br><br><br>
+    </li>
+}
