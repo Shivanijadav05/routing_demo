@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class Users {
   
   name:string|null="";
+  id:string|null="";
   constructor(private route:ActivatedRoute)
   {
     
@@ -19,6 +20,7 @@ export class Users {
     {
       this.route.params.subscribe((params)=>{
        this.name=params['name'];
+       this.id=params['id'];
        
       })
     }
