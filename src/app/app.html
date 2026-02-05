@@ -2,7 +2,11 @@
 
 
 
-
-
 <app-header></app-header>
+
+<button (click)="getStudentData()">Get data</button>
+@for(item of studentData;track item)
+{
+        <h2>{{item.studentName}}</h2>
+}
 <router-outlet></router-outlet>
