@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IUser } from '../interfaces/User';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,21 +12,20 @@ export class Product {
   {
     console.log("service works")
   }
-  studentData:any;
-  getStudentData()
-  {
-    const url="http://localhost:5014/api/Student";
-   return this.http.get(url);
+  private baseUrl = environment.apiBaseUrl;
+
+  getStudentData(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(`${this.baseUrl}/Student`);
   }
+ 
+
   saveStudent(user:IUser):Observable<IUser>
   {
-    const url="http://localhost:5014/api/Student/Create";
-    return this.http.post<IUser>(url,user);
+    return this.http.post<IUser>(`${this.baseUrl}/Student/Create`, user);
   }
   deleteStudent(id:string):Observable<IUser>
   {
-    const url="http://localhost:5014/api/Student";
-    return this.http.delete<IUser>(url+"/"+id);
+    return this.http.delete<IUser>(`${this.baseUrl}/Student/${id}`);
   }
   
 }

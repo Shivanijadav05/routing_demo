@@ -1,11 +1,12 @@
 <p>about for {{username}} works!</p>
-<nav>
+<router-outlet></router-outlet>
+<!-- <nav>
   <a routerLink="child2" routerLinkActive="active">Child 2</a> |
-</nav>
+</nav> -->
 
 
 
-  <app-child2 (getUsers)="handleUsers($event)"></app-child2>
+  <app-child2 [username]="username"></app-child2>
   @for(user of users;track user)
   {
     <h1>user</h1>

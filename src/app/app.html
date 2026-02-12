@@ -10,7 +10,7 @@
         <h2>{{item.studentName}}</h2>
 } -->
 
-        <form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)" >
+         <form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)" >
                 <input type="text" placeholder="enter name" ngModel name="studentName">
                 <br><br>
                 <input type="text" placeholder="enter email" ngModel name="email">
@@ -18,7 +18,7 @@
                 <input type="text" placeholder="enter age" ngModel name="address">
                 <br><br>
                 <button>Add User</button>
-        </form>
+        </form> 
 
 
         <button (click)="getStudentData()">Get data</button>
