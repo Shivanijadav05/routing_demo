@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { interval, Subscription } from 'rxjs';
 
 
+
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,RouterLink,Header,FormsModule],

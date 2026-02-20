@@ -21,11 +21,16 @@ export class Product {
 
   saveStudent(user:IUser):Observable<IUser>
   {
+    
     return this.http.post<IUser>(`${this.baseUrl}/Student/Create`, user);
   }
   deleteStudent(id:string):Observable<IUser>
   {
     return this.http.delete<IUser>(`${this.baseUrl}/Student/${id}`);
+  }
+  onLogin(obj:any):Observable<any>
+  {
+    return this.http.post('http://localhost:5014/api/Login',obj);
   }
   
 }

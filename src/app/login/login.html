@@ -1,1 +1,31 @@
-<p>login works!</p>
+<form (ngSubmit)="login()" #loginForm="ngForm">
+
+    <div>
+      <label>Student Name</label>
+      <input
+        type="text"
+        name="studentName"
+        [(ngModel)]="loginData.studentName"
+        required
+      />
+    </div>
+  
+    <div>
+      <label>Password</label>
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="loginData.password"
+        required
+      />
+    </div>
+  
+    <button type="submit" [disabled]="loginForm.invalid">
+      Login
+    </button>
+  
+    <p *ngIf="errorMessage" style="color:red">
+      {{ errorMessage }}
+    </p>
+  
+  </form>
